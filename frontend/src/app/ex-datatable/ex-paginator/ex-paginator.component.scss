@@ -1,0 +1,15 @@
+.paginator {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 72px;
+  width: 100%;
+  border: 1px solid #888;
+  background: #f0f0f0;
+  border-bottom: 1px solid #aaa;
+}
+
+.paginator .paginator-controller {
+  margin-right: 16px;
+}

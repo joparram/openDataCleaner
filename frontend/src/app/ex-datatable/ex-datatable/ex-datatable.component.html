@@ -1,29 +1,33 @@
-<div class="container">
-  <div class="wrapper">
-    <table class="ex-table" cellpadding="4">
-      <thead>
-        <tr>
-          <th *ngFor="let header of headers; let i = index">
-            <button class="header-button">{{ header.name }}</button>
-            <dropdown-button [menuItems]="menuItems" class="header-menu-button"></dropdown-button>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let row of rows; let i = index">
-          <td *ngFor="let item of row | keyvalue; let i = index">
-            <input
-              #input
-              [ngClass]="[cellStyle]"
-              [readonly]="cellStyle == 'ex-cell-default'"
-              (dblclick)="onCellDoubleClick(); input.select()"
-              (blur)="onCellBlur()"
-              type="text"
-              value="{{ row[headers[i].field] }}"
-            />
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div class="wrapper">
+  <div class="container">
+    <div class="container-dock">
+      <table class="ex-table" cellpadding="4">
+        <thead>
+          <tr>
+            <th *ngFor="let header of headers; let i = index">
+              <button class="header-button">{{ header.name }}</button>
+              <dropdown-button [menuItems]="menuItems" class="header-menu-button"></dropdown-button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of rows; let i = index">
+            <td *ngFor="let item of row | keyvalue; let i = index">
+              <input
+                #input
+                [ngClass]="[cellStyle]"
+                [readonly]="cellStyle == 'ex-cell-default'"
+                (dblclick)="onCellDoubleClick(); input.select()"
+                (blur)="onCellBlur()"
+                type="text"
+                value="{{ row[headers[i].field] }}"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+  <ex-paginator></ex-paginator>
 </div>
+<!--container-->

@@ -1,31 +1,33 @@
-.container {
-  display: block;
-  overflow-x: scroll;
-  height: 100%;
-  padding: 0;
-  margin: 0;
+// https://stackoverflow.com/a/14834307
+.wrapper {
+  display: flex;
+  flex-direction: column;
   background: white;
+  height: 100%;
+  overflow: hidden;
 }
 
-.container .wrapper {
+.wrapper .container {
+  overflow-x: scroll;
+  scroll-snap-type: mandatory;
+}
+
+.wrapper .container .container-dock {
   width: 0;
 }
 
 .ex-table {
-  display: table;
-  border: none;
   border-collapse: separate;
   border-spacing: 0;
-  padding: 0;
-  margin: 0;
+  border: none;
 }
 
 .ex-table thead tr th {
+  height: 40px;
   position: sticky;
   top: 0;
-  height: 40px;
-  border-bottom: 1px solid #aaa;
   background: #f0f0f0;
+  border-bottom: 1px solid #aaa;
 }
 
 .ex-table th .header-button {
@@ -37,20 +39,16 @@
   float: right;
 }
 
-// .ex-table tr:nth-child(even) *{
-//   background: #fafafa;
-// }
-
 .ex-table td {
-  border-bottom: 1px solid #d0d0d0;
   height: 40px;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 .ex-table td input {
   width: 200px;
-  background-color: transparent;
   margin: 0;
   padding: 8px;
+  background-color: transparent;
   border: none;
   outline: none;
 }
@@ -61,7 +59,6 @@
 }
 
 // cell dynamic styles
-
 .ex-table tr:focus-within {
   background: rgba(33, 150, 243, 0.3);
 }

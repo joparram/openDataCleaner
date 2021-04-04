@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
   minRow: number = 0;
   maxRow: number = 100;
   dataSubscription: Subscription = new Subscription();
+
   menuItems: any[] = [
     {
       title: 'Cambiar Tipo',
@@ -109,7 +110,6 @@ export class HomeComponent implements OnInit {
       field: 'phone',
     },
   ];
-
   datatest = [
     {
       _id: '60610589dbe5d177076fa290',
@@ -356,7 +356,7 @@ export class HomeComponent implements OnInit {
       maxBlocksInCache: 1,
       rowModelType: 'infinite',
       pagination: true,
-      paginationAutoPageSize: true,
+      paginationAutoPageSize: false,
       onCellValueChanged: (e: any) => this.updateCellValue(e),
       onCellFocused: (e: any) => {
         this.selectedColumn = e.column.colId;
